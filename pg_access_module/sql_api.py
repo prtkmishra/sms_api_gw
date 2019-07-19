@@ -56,6 +56,12 @@ def newUserReg(self, username, pwd):
     except (Exception, psycopg2.Error) as error :
         if(connection):
             print("Failed to insert record into login table", error)
+    finally:
+    ## closing database connection.
+        if(connection):
+        cursor.close()
+        connection.close()
+        print("PostgreSQL connection is closed")
             
 
 def loginValidation(self, username, pwd):
@@ -74,6 +80,14 @@ def loginValidation(self, username, pwd):
     except (Exception, psycopg2.Error) as error :
         if(connection):
             print("Failed to read record from login table", error)
+    finally:
+    ## closing database connection.
+        if(connection):
+        cursor.close()
+        connection.close()
+        print("PostgreSQL connection is closed")
+
+
         
     
    

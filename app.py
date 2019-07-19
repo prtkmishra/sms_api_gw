@@ -11,36 +11,32 @@ import json
 app = Flask(__name__)
 
 
-
+## home page
 @app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('login.html')
+
+## user registration page
+@app.route('/userReg', methods=['GET', 'POST'])
+def userReg():
+    print('Enter')
+    return render_template('user_reg.html')
+
     
-
-@app.route('/home', methods=['GET', 'POST'])
-def home():
-    print('Enter')
-    return render_template('login.html')
-
-
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    print('Enter')
-    return render_template('login.html')
-
+## Login validation
 @app.route('/fetchLoginStatus', methods=['GET', 'POST'])
 def fetchLoginStatus():
     status = 'OK'
     dictTest = {}
     dictTest['result'] = status
     return json.dumps(dictTest)
-
-@app.route('/userReg', methods=['GET', 'POST'])
-def userReg():
-    print('Enter')
-    return render_template('user_reg.html')
+    username = {}
+    pwd = {}
+    pg_access_obj = pg(username,pwd)
+    pg_access_obj.loginValidation()
     
+
+## Call SQL module to insert new username and password in DB    
 @app.route('/newUserDb', methods=['GET', 'POST'])
 def newUserDb():
     username = {}

@@ -43,9 +43,10 @@ def sqlConnection(self):
         
 
 def newUserReg(self, username, pwd):
-    ## create new SMS user#
     self.sqlConnection()
+    ## create new SMS user#
     try:
+        ## execute the PsotgreSQL query
         postgres_insert_query = """ New user name and password (%s,%s)"""
         record_to_insert = (self.username, self.pwd)
         cursor.execute(postgres_insert_query, record_to_insert)
@@ -55,5 +56,24 @@ def newUserReg(self, username, pwd):
     except (Exception, psycopg2.Error) as error :
         if(connection):
             print("Failed to insert record into login table", error)
+            
+
+def loginValidation(self, username, pwd):
+    self.sqlConnection()
+    ##validate login credentials
+    try:
+        ## create new cursor 
+        postgres_insert_query = """ SELECT (%s,%s)"""
+        record_to_select = (self.username, self.pwd)
+        cursor.execute(postgres_insert_query, record_to_select)
+        row = cursor.fetchone()
+        while row is not None:
+            return row
+            row = cursor.fetchone()
+        cursor.close()
+    except (Exception, psycopg2.Error) as error :
+        if(connection):
+            print("Failed to read record from login table", error)
+        
     
    

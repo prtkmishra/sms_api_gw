@@ -10,3 +10,6 @@ if __name__ == "__main__":
     """
     pg_access_obj = pg(username,pwd)
     pg_access_obj.newUserReg()
+    pg_access_obj.loginValidation()
+    
+    

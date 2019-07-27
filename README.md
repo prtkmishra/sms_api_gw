@@ -1,6 +1,9 @@
 # sms_api_gw
-The purpose of this API GW is to perform following -
-  1. Postgres SQL Queries
-  2. CAS API mapping
-  3. CAS health monitoring
-  4. user interface
+The app.py will-
+  1. Instantiate flask api server
+  2. have routes for every individual SQL action
+  3. PG DB access
+  4. Interface with CAS
+  
+# Creating Subs flow
+refer to create subs

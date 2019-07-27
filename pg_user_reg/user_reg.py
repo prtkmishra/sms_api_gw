@@ -27,7 +27,7 @@ class NewUser:
             cursor.execute(postgres_insert_query, record_to_insert)
             connection.commit()
             count = cursor.rowcount
-            print (count, "Record inserted successfully into login table"
+            print (count, "Record inserted successfully into login table")
         except (Exception, psycopg2.Error) as error :
             if(connection):
                 print("Failed to insert record into login table", error)

@@ -59,10 +59,10 @@ def newUserDb():
 ## Login validation
 @app.route('/fetchLoginStatus', methods=['GET', 'POST'])
 def fetchLoginStatus():
-    # status = 'OK'
-    # dictTest = {}
-    # dictTest['result'] = status
-    # return json.dumps(dictTest)
+    status = 'OK'
+    dictTest = {}
+    dictTest['result'] = status
+    return json.dumps(dictTest)
     ## Get username, pwd from client
     username    = request.form['email']
     pwd         = request.form['password']

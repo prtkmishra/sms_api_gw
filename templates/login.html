@@ -86,6 +86,7 @@
 	
 <!--===============================================================================================-->
 	<script src="../static/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script> -->
 <!--===============================================================================================-->
 	<script src="../static/vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
@@ -106,7 +107,7 @@
 	// function called when template is loading
         $(document).ready(function() {
 
-            <!-- alert('For Page Loding'); -->
+            alert('For Page Loding');
             <!-- console.log('Prateek'); -->
         });
 
@@ -117,6 +118,7 @@
 			enteredEmail = document.getElementById("inputemail").textContent;
             
              $.ajax({ 
+				alert('For Page Loding');
                 type    : "GET",
                 <!-- type    : "POST", -->
                 url     : "/fetchLoginStatus",
